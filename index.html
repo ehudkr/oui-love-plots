@@ -113,6 +113,7 @@ window.Quarto = {
 <meta name="citation_reference" content="citation_title=Understanding machine learning: From theory to algorithms;,citation_author=Shai Shalev-Shwartz;,citation_author=Shai Ben-David;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;">
 <meta name="citation_reference" content="citation_title=Fundamentals of data visualization: A primer on making informative and compelling figures;,citation_author=Claus O Wilke;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;">
 <meta name="citation_reference" content="citation_title=Principles of confounder selection;,citation_author=Tyler J VanderWeele;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_volume=34;,citation_journal_title=European journal of epidemiology;,citation_publisher=Springer;">
+<meta name="citation_reference" content="citation_title=Random forests;,citation_author=Leo Breiman;,citation_publication_date=2001;,citation_cover_date=2001;,citation_year=2001;,citation_volume=45;,citation_journal_title=Machine learning;,citation_publisher=Springer;">
 </head>
 
 <body>
@@ -153,7 +154,7 @@ window.Quarto = {
                 <div>
             <div class="quarto-title-meta-heading">Modified</div>
             <div class="quarto-title-meta-contents">
-              <p class="date-modified">May 2, 2024</p>
+              <p class="date-modified">May 3, 2024</p>
             </div>
           </div>
                 
@@ -250,8 +251,9 @@ Figure&nbsp;1: Outcome-informed Love plot. On the left, a standard Love plot, sh
 <!-- To justify our approach, we briefly introduce the basic concept behind data visualization. -->
 <p>Data visualization allows us to encode numeric data values as visual elements. When we “visualize data” we essentially map between data values to graphical elements. Good, consistent visualization will map different dimensions of the data to different types of encoding channels using appropriate graphical marks <span class="citation" data-cites="wilke2019fundamentals">(<a href="#ref-wilke2019fundamentals" role="doc-biblioref">Wilke 2019, chap. 2</a>)</span>.</p>
 <p>For instance, a traditional Love plot (<a href="#fig-love-oui-love" class="quarto-xref">Figure&nbsp;1</a>) maps the covariates to the y-axis - so each covariate gets its own row, the (absolute) standardized mean difference (ASMD) of each covariate to the x-axis, the type of the model (e.g., weighted/unweighted) to the color (blue/orange) and possibly also to different markers (circle/triangle). All in all, we mapped three data dimensions: covariates, their ASMD, and adjustment model, to three graphical channels: y-axis, x-axis, and color (and possibly a fourth channel of marker shape for emphasis).</p>
-<p>In an outcome-informed Love plot, we calculate an additional data dimension: the covariate-outcome impact (“feature importance”) of each covariate on the outcome. The covariate-outcome importance is a non-negative score positively associated with importance. There are several approaches to calculate feature importance, which we describe in more details in the <a href="#methods">Methods</a> section, but briefly, a low score indicates relatively small importance – a change in the covariate levels is associated with little change in the predicted outcome, and a high score indicates relatively high importance – a change in the covariate levels is associated with large changes in the predicted outcome. Put differently, more important covariates explain more variation in the outcome and contribute more the accuracy of the prediction.</p>
-<p>To augment the traditional Love plot, the additional dimension for the covariate-outcome importance score is mapped to one or more visual channels. In this work we suggest three candidate channels, which can be combined arbitrarily:</p>
+<p>In an outcome-informed Love plot, we calculate an additional data dimension: the covariate-outcome impact (“feature importance”) of each covariate on the outcome. The covariate-outcome importance is a non-negative score positively associated with importance. There are several approaches to calculate feature importance, which we describe in more details in the <a href="#methods">Methods</a> section, <!-- but briefly, a low score indicates relatively small importance -- a change in the covariate levels is associated with little change in the predicted outcome, 
+and a high score indicates relatively high importance -- a change in the covariate levels is associated with large changes in the predicted outcome. --> but briefly, a low score indicates relatively small importance – the exclusion of the covariate causes small changes in prediction error, nd a high score indicates relatively high importance – the exclusion of the covariate causes large changes in the prediction error. Put differently, more important covariates explain more variation in the outcome and contribute more to the accuracy<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of the prediction.</p>
+<p>To augment the traditional Love plot, the additional dimension for the covariate-outcome importance score is mapped to one or more visual channels. In this work we suggest three candidate channels, which can be arbitrarily combined:</p>
 <ol type="1">
 <li>The opacity channel. Marks corresponding to more important covariates are more opaque, while less important marks are more transparent.</li>
 <li>The size channel. Marks corresponding to more important covariate are larger, while less important marks are smaller.</li>
@@ -317,8 +319,10 @@ SMD_j = \frac{\bar{x}_j \vert_{A=1}- \bar{x}_j\vert_{A=0}}{\sqrt{\hat{\sigma}_j^
 </section>
 <section id="covariate-importance-measures" class="level3">
 <h3 class="anchored" data-anchor-id="covariate-importance-measures">Covariate importance measures</h3>
-<p>The task of assessing the influence of covariates on an outcome is a well established task in statistics, often utilized for dimensionality reduction (feature selection) or model selection. There are multiple approaches to compute this importance: regression models can use absolute magnitude of coefficients (assuming input is standardized), or non-zero coefficients in L1-penalized regression (LASSO). In models more generally, covariate importance can be assessed by how “excluding” each covariate affect some goodness-of-fit metric. This “exclusion” is either done by removing the feature entirely from the model or just shuffling its values across observations. The goodness-of-fit evaluated can be any arbitrary metric like decreasing the loss or increasing the accuracy. The change in goodness-of-fit can either be multiplicative or additive, grounding the full model (with all covariates) as the baseline to compare against. Covariates that are more important for predicting the outcome will cause larger decrease in performance relative to the full model (that includes these covariates), meaning they are the ones driving the accuracy of the predictions.</p>
-<p>In this work, our goodness-of-fit metric is the natural deviance, which, since our outcome is continuous, is the mean squared error. The importance of a covariate is defined as the difference in deviance between the full model and the model fitted with that covariate removed (divided by the deviance of the full model, similar to percent change calculations.) Additionally, we consider only importance measures that are conditional on all other covariates and exposure. Namely, we don’t consider multiple univariable importance measures, and we always additionally condition on the exposure <span class="citation" data-cites="vanderweele2019principles">(<a href="#ref-vanderweele2019principles" role="doc-biblioref">VanderWeele 2019</a>)</span>. However, outcome-informed Love plot can work with any arbitrary non-negative importance measure, where lower scores correspond to small importance and higher scores to high importance.</p>
+<p>The task of assessing the influence of covariates on an outcome is a well established task in statistics, often utilized for dimensionality reduction (feature selection) or model selection. There are multiple approaches to compute this importance: regression models can use absolute magnitude of coefficients (assuming input is standardized), or non-zero coefficients in L1-penalized regression (LASSO). A more model agnostic approach, the covariate importance can be assessed by how “excluding” each covariate affects some goodness-of-fit metric. This “exclusion” is either done by removing the feature entirely <span class="citation" data-cites="harrell2001regression">(<a href="#ref-harrell2001regression" role="doc-biblioref">Harrell et al. 2001, chap. 9.8.4</a>)</span> from the model or just shuffling its values across observations <span class="citation" data-cites="breiman2001random">(<a href="#ref-breiman2001random" role="doc-biblioref">Breiman 2001, sec. 10</a>)</span> (the latter may also be evaluated on an out-of-sample test split). The goodness-of-fit measure evaluated can be any arbitrary metric like decreasing the loss or increasing the accuracy. The change in goodness-of-fit can either be multiplicative or additive, grounding the full model (with all covariates) as the baseline to compare against. Covariates that are more important for predicting the outcome will cause larger decrease in performance relative to the full model (that includes these covariates), meaning they are the ones driving the accuracy of the predictions.</p>
+<!-- [^2]: Colloquially speaking. For risk models, it can be mean calibration error (if you care about calibration), or area under the receiver of operating curve (if you care about discrimination), or any other confusion matrix-based metric.  -->
+<p>In this work, our goodness-of-fit metric is the natural deviance, which, since our outcome is continuous, is the mean squared error. <!-- The importance of a covariate is defined as the difference in deviance between the full model and the model fitted with that covariate removed (divided by the deviance of the full model, similar to percent change calculations.) --> The importance of a covariate is defined using the mean decrease in accuracy <span class="citation" data-cites="breiman2001random">(<a href="#ref-breiman2001random" role="doc-biblioref">Breiman 2001</a>)</span> – the percentage change in deviance between the full model and the model fitted with that covariate removed. <!-- Additionally, we consider only importance measures that are conditional on all other covariates and the exposure.
+Namely, we don't consider multiple univariable importance measures, and we always additionally condition on the exposure [@vanderweele2019principles].  --> Importantly, we do not consider univariable importance measures, but rather a metric that is always conditional on the rest of the covariates and the exposure <span class="citation" data-cites="vanderweele2019principles">(<a href="#ref-vanderweele2019principles" role="doc-biblioref">VanderWeele 2019</a>)</span>. However, the outcome-informed Love plot can work with any arbitrary non-negative importance measure, as long as lower scores correspond to little importance and higher scores to high importance.</p>
 </section>
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
@@ -372,7 +376,7 @@ Figure&nbsp;4: Confounding structure underlying the simulation example. Right is
 <section id="summary" class="level3">
 <h3 class="anchored" data-anchor-id="summary">Summary</h3>
 <p>We have introduced an augmentation to the Love plot by incorporating additional information about covariate-outcome importance. Love plot is a common graphical diagnostic for group balancing methods in causal inference, visualizing the (Absolute) Standardized Mean Difference (ASMD) for each covariate before and after adjustment. ASMD alone, however, can be misleading if the covariates under investigation are not true confounding variables, influencing both exposure and outcome. Therefore, outcome-informed Love plot can help paint a fuller picture, emphasizing covariates that are both imbalanced <em>and</em> drive change in the outcome.</p>
-<p><em>“Oui-Love plots”</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is an easy-to-implement idea that can support the workflow of causal inference practitioners and we hope it will.</p>
+<p><em>“Oui-Love plots”</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> is a modular, extendable, and easy-to-implement idea that can support the workflow of causal inference practitioners and we hope it will.</p>
 </section>
 </section>
 
@@ -441,6 +445,9 @@ Ali, M Sanni, Rolf HH Groenwold, Svetlana V Belitser, Wiebe R Pestman, Arno W Ho
 <div id="ref-austin2009balance" class="csl-entry" role="listitem">
 Austin, Peter C. 2009. <span>“Balance Diagnostics for Comparing the Distribution of Baseline Covariates Between Treatment Groups in Propensity-Score Matched Samples.”</span> <em>Statistics in Medicine</em> 28 (25): 3083–3107.
 </div>
+<div id="ref-breiman2001random" class="csl-entry" role="listitem">
+Breiman, Leo. 2001. <span>“Random Forests.”</span> <em>Machine Learning</em> 45: 5–32.
+</div>
 <div id="ref-ding2017instrumental" class="csl-entry" role="listitem">
 Ding, Peng, TJ VanderWeele, and James M Robins. 2017. <span>“Instrumental Variables as Bias Amplifiers with General Outcome and Confounding.”</span> <em>Biometrika</em> 104 (2): 291–302.
 </div>
@@ -471,7 +478,8 @@ Wilke, Claus O. 2019. <em>Fundamentals of Data Visualization: A Primer on Making
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Yes, we love plots.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>We will use “accuracy” in a colloquial manner throughout.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Yes, we love plots.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
@@ -885,7 +893,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
