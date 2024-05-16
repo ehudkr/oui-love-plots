@@ -20,6 +20,14 @@ keywords:
   - Matching
   # - Inverse probability weighting
 bibliography: references.bib
+crossref:
+  custom:
+    - kind: float
+      key: suppfig
+      latex-env: suppfig
+      reference-prefix: Figure S
+      space-before-numbering: false
+      latex-list-of-description: Supplementary Figure
 # format:
 #   html:
 #     fig-format: svg
@@ -184,8 +192,8 @@ but this still forces the researcher to be more mindful when examining the plot 
 
 To assist the researcher even further, we can use the combined outcome-informed ASMD score instead of just the outcome-importance score. 
 This allows confounding variables, associated with both the exposure and the outcome, to be further promoted above prognostic variables when plotting, making them stand out more.
-@fig-ouiasmd-love shows the difference between an outcome-informed Love plot and a Love plot augmented by outcome-informed ASMD score.
-All other figures (Figures [-@fig-love-oui-love; -@fig-oui-encoding; -@fig-oui-bal-plot]) use the combined outcome-informed ASMD score.  
+@suppfig-ouiasmd-love shows the difference between an outcome-informed Love plot and a Love plot augmented by outcome-informed ASMD score.
+All other figures (Figures [-@fig-love-oui-love; -@fig-oui-encoding; S -@suppfig-oui-bal-plot]) use the combined outcome-informed ASMD score.  
 
 ## Methods
 
@@ -264,7 +272,7 @@ In scatter plots, the adjusted and unadjusted ASMDs are plotted on the x and y a
 In slope graphs, the pre/post-adjustment indication is mapped to the x-axis and the ASMD to the y-axis.
 Scatter plots are better suited for high-dimensional settings where plotting all covariates on the y-axis is infeasible (or at least too crowded). 
 Slope graphs have a similar strength, compromising some information richness (covariate identity) in exchange of emphasizing overall reduction in ASMD. 
-@fig-oui-bal-plot demonstrates both variants can benefit by the same augmenting encoding. 
+@suppfig-oui-bal-plot demonstrates both variants can benefit by the same augmenting encoding. 
 
 
 #### Assessing the utility of Outcome-informed Love plots
@@ -312,9 +320,9 @@ and we hope it will.
 Augmenting Love plots with outcome importance or the combined outcome informed ASMD score.
 
 :::{.column-body-outset}
-{{< embed notebooks/ouilove_plot.ipynb#fig-ouiasmd-love >}}
+{{< embed notebooks/ouilove_plot.ipynb#suppfig-ouiasmd-love >}}
 :::
 
 #### Outcome-informed balance plots
-{{< embed notebooks/ouibalance_plot.ipynb#fig-oui-bal-plot >}}
+{{< embed notebooks/ouibalance_plot.ipynb#suppfig-oui-bal-plot >}}
 
