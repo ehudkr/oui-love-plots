@@ -1099,7 +1099,7 @@ Name: asmd, Length: 120, dtype: float64</code></pre>
 <pre><code>AttributeError: 'SubFigure' object has no attribute 'savefig'</code></pre>
 </div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [16]:</pre></div><div id="cell-fig-oui-bal-plot" class="cell" data-execution_count="16">
+<div class="cell-container"><div class="cell-decorator"><pre>In [16]:</pre></div><div id="cell-suppfig-oui-bal-plot" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>topaxes[<span class="dv">0</span>].set_title(<span class="st">"Standard"</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>topaxes[<span class="dv">1</span>].set_title(<span class="st">"Outcome-informed"</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>bottomaxes[<span class="dv">0</span>].set_ylabel(<span class="st">"ASMD"</span>)</span>
@@ -1109,20 +1109,16 @@ Name: asmd, Length: 120, dtype: float64</code></pre>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># fig.tight_layout()</span></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>fig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-<div id="fig-oui-bal-plot" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-oui-bal-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="ouibalance_plot_files/figure-html/fig-oui-bal-plot-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="ouibalance_plot_files/figure-html/fig-oui-bal-plot-output-1.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-oui-bal-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Encoding covariate-outcome importance information (right) in scatter plots (top) and slope graphs (bottom).
-</figcaption>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p class=""><a href="ouibalance_plot_files/figure-html/suppfig-oui-bal-plot-output-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Encoding covariate-outcome importance information (right) in scatter plots (top) and slope graphs (bottom)."><img src="ouibalance_plot_files/figure-html/suppfig-oui-bal-plot-output-1.png" class="img-fluid figure-img" alt="Encoding covariate-outcome importance information (right) in scatter plots (top) and slope graphs (bottom)."></a></p>
+<figcaption>Encoding covariate-outcome importance information (right) in scatter plots (top) and slope graphs (bottom).</figcaption>
 </figure>
 </div>
 </div>
 </div></div>
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;1: Encoding covariate-outcome importance information (right) in scatter plots (top) and slope graphs (bottom).</span>
+<span class="glightbox-desc lightbox-desc-1">Encoding covariate-outcome importance information (right) in scatter plots (top) and slope graphs (bottom).</span>
 </div>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
@@ -1533,7 +1529,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"selector":".lightbox","openEffect":"zoom","descPosition":"bottom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
