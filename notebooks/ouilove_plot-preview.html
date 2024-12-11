@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.553">
+    <meta name="generator" content="quarto-1.6.39">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,7 +32,7 @@
       }
       @media print {
       pre > code.sourceCode { white-space: pre-wrap; }
-      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
       }
       pre.numberSource code
         { counter-reset: source-line 0; }
@@ -152,10 +152,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a1ff8711b79ae3724c050874b28d9907.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -209,7 +209,7 @@
   </ul>
 </nav>
 </div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
@@ -261,10 +261,9 @@
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>X.join(a).join(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -382,7 +381,6 @@
 <p>1000 rows × 6 columns</p>
 </div>
 </div>
-</div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="cell-6" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ipw <span class="op">=</span> IPW(LogisticRegression(penalty<span class="op">=</span><span class="st">"none"</span>))</span>
@@ -475,10 +473,9 @@ Name: asmd, dtype: float64</code></pre>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>feature_importance</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -486,7 +483,7 @@ Name: asmd, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">mse</th>
 <th data-quarto-table-cell-role="th">mae</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">covariate</th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
@@ -523,7 +520,6 @@ Name: asmd, dtype: float64</code></pre>
 
 </div>
 </div>
-</div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [11]:</pre></div><div id="cell-11" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plot_data <span class="op">=</span> asmds.reset_index().merge(</span>
@@ -532,10 +528,9 @@ Name: asmd, dtype: float64</code></pre>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plot_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -625,7 +620,6 @@ Name: asmd, dtype: float64</code></pre>
 
 </div>
 </div>
-</div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [12]:</pre></div><div id="cell-12" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prettify covariate names:</span></span>
@@ -694,7 +688,7 @@ Name: asmd, dtype: float64</code></pre>
 <span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>        p <span class="op">=</span> p.on(ax).plot()</span>
 <span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [14]:</pre></div><div id="cell-fig-oui-encoding_" class="cell" data-execution_count="14">
+<div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div id="cell-fig-oui-encoding_" class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> mpl.figure.Figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> fig.subplot_mosaic(<span class="st">"BCD"</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> mpl.pyplot.subplot_mosaic(<span class="st">"BCD"</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
@@ -739,10 +733,10 @@ Name: asmd, dtype: float64</code></pre>
 <span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
 <span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="co"># fig</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="fig-oui-encoding_" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-oui-encoding_" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-oui-encoding_-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="ouilove_plot_files/figure-html/fig-oui-encoding_-output-1.svg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="ouilove_plot_files/figure-html/fig-oui-encoding_-output-1.svg" class="img-fluid figure-img"></a>
+<a href="ouilove_plot_files/figure-html/fig-oui-encoding_-output-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Encoding covariate-outcome importance information as marker opacity, marker size, and covariate order. Opacity and size allow less important covariates to appear more salient by making them more transparent or smaller, respectively. Y-axis order moves less important covariates further down the plot, focusing more important covariates in a specific region of the figure."><img src="ouilove_plot_files/figure-html/fig-oui-encoding_-output-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-oui-encoding_-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Encoding covariate-outcome importance information as marker opacity, marker size, and covariate order. Opacity and size allow less important covariates to appear more salient by making them more transparent or smaller, respectively. Y-axis order moves less important covariates further down the plot, focusing more important covariates in a specific region of the figure.
@@ -781,10 +775,10 @@ Figure&nbsp;1: Encoding covariate-outcome importance information as marker opaci
 <span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
 <span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="co"># fig</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="fig-love-oui-love_" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-love-oui-love_" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-love-oui-love_-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="ouilove_plot_files/figure-html/fig-love-oui-love_-output-1.svg" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="ouilove_plot_files/figure-html/fig-love-oui-love_-output-1.svg" class="img-fluid figure-img"></a>
+<a href="ouilove_plot_files/figure-html/fig-love-oui-love_-output-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Outcome-informed Love plot. On the left, a standard Love plot, showing covariates on the y-axis sorted by unadjusted ASMD, ASMD on the x-axis, unadjusted ASMDs as orange triangle and inverse propensity weighted ASMDs as blue circles. On the right, an Outcome-informed Love plot, encoding the importance of covariate on outcome prediction in three different visual channels: size (less important covariates are smaller), opacity(less important covariates are more transparent), and y-axis order (less important covariates are further down the panel). Outcome-informed Love plots reduce clutter and highlight the more important covariates to which examine balancing on."><img src="ouilove_plot_files/figure-html/fig-love-oui-love_-output-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-love-oui-love_-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Outcome-informed Love plot. On the left, a standard Love plot, showing covariates on the y-axis sorted by unadjusted ASMD, ASMD on the x-axis, unadjusted ASMDs as orange triangle and inverse propensity weighted ASMDs as blue circles. On the right, an Outcome-informed Love plot, encoding the importance of covariate on outcome prediction in three different visual channels: size (less important covariates are smaller), opacity(less important covariates are more transparent), and y-axis order (less important covariates are further down the panel). Outcome-informed Love plots reduce clutter and highlight the more important covariates to which examine balancing on.
@@ -803,10 +797,9 @@ Figure&nbsp;2: Outcome-informed Love plot. On the left, a standard Love plot, sh
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ouiasmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -855,7 +848,6 @@ Figure&nbsp;2: Outcome-informed Love plot. On the left, a standard Love plot, sh
 
 </div>
 </div>
-</div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [17]:</pre></div><div id="cell-18" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>outcome_metric <span class="op">=</span> <span class="st">"mse"</span></span>
@@ -863,10 +855,9 @@ Figure&nbsp;2: Outcome-informed Love plot. On the left, a standard Love plot, sh
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>ouiasmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -920,7 +911,6 @@ Figure&nbsp;2: Outcome-informed Love plot. On the left, a standard Love plot, sh
 
 </div>
 </div>
-</div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [18]:</pre></div><div id="cell-fig-oui-asmd-score" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fig = mpl.figure.Figure(figsize=(8, 3))</span></span>
@@ -951,14 +941,13 @@ Figure&nbsp;2: Outcome-informed Love plot. On the left, a standard Love plot, sh
 <span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="fig-oui-asmd-score" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-oui-asmd-score" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-oui-asmd-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="ouilove_plot_files/figure-html/fig-oui-asmd-score-output-1.svg" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="ouilove_plot_files/figure-html/fig-oui-asmd-score-output-1.svg" class="img-fluid figure-img"></a>
+<a href="ouilove_plot_files/figure-html/fig-oui-asmd-score-output-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Outcome-informed ASMD score. A) Inverse propensity weighted ASMD, with 0.1 threshold reference (dashed) B) Covariate-outcome importance score (mean decrease in mean square error). C) Outcome-informed ASMD, generated by multiplying the above two. The ASMD emphasizes covariate-exposure associations (X_A, X_{AY}), the outcome-importance score emphasizes covariate-outcome associations (X_Y, X_{AY}), and outcome-informed ASMD emphasizes the interaction of the former two scores (X_{AY})."><img src="ouilove_plot_files/figure-html/fig-oui-asmd-score-output-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-oui-asmd-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Outcome-informed ASMD score. A) Inverse propensity weighted ASMD, with 0.1 threshold reference (dashed) B) Covariate-outcome importance score (mean decrease in mean square error). C) Outcome-informed ASMD, generated by multiplying the above two. The ASMD emphasizes covariate-exposure associations (<span class="math inline">\(X_A, X_{AY}\)</span>), the outcome-importance score emphasizes covariate-outcome associations (<span class="math inline">\(X_Y, X_{AY}\)</span>), and outcome-informed ASMD emphasizes the interaction of the former two scores (<span class="math inline">\(X_{AY}\)</span>).<br>
-
+Figure&nbsp;3: Outcome-informed ASMD score. A) Inverse propensity weighted ASMD, with 0.1 threshold reference (dashed) B) Covariate-outcome importance score (mean decrease in mean square error). C) Outcome-informed ASMD, generated by multiplying the above two. The ASMD emphasizes covariate-exposure associations (<span class="math inline">\(X_A, X_{AY}\)</span>), the outcome-importance score emphasizes covariate-outcome associations (<span class="math inline">\(X_Y, X_{AY}\)</span>), and outcome-informed ASMD emphasizes the interaction of the former two scores (<span class="math inline">\(X_{AY}\)</span>).
 </figcaption>
 </figure>
 </div>
@@ -980,7 +969,7 @@ Figure&nbsp;3: Outcome-informed ASMD score. A) Inverse propensity weighted ASMD,
 <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    how<span class="op">=</span><span class="st">"left"</span>,</span>
 <span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [33]:</pre></div><div id="cell-suppfig-ouiasmd-love" class="cell" data-execution_count="33">
+<div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="cell-fig-ouiasmd-love" class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> mpl.figure.Figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">3</span>))</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> fig.subplot_mosaic(<span class="st">"AE"</span>, sharex<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> mpl.pyplot.subplot_mosaic(<span class="st">"AE"</span>, figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">3</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
@@ -1010,10 +999,14 @@ Figure&nbsp;3: Outcome-informed ASMD score. A) Inverse propensity weighted ASMD,
 <span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
 <span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="co"># fig</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p class=""><a href="ouilove_plot_files/figure-html/suppfig-ouiasmd-love-output-1.svg" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4" title="Love plot augmented by outcome-informed ASMD. On the left, an outcome-informed Love plot augmented by covariate-outcome importance (Similar to Figure&nbsp;6, right, but without ordering). On the right, an outcome-informed Love plot, but augmented by the combined outcome-importance ASMD score. While the former may emphasize prognostic variables too much (X_Y), the latter is able to minimize their importance and emphasize instead confounding variables that have both larger covariate-outcome importance and have large ASMD."><img src="ouilove_plot_files/figure-html/suppfig-ouiasmd-love-output-1.svg" class="img-fluid figure-img" alt="Love plot augmented by outcome-informed ASMD. On the left, an outcome-informed Love plot augmented by covariate-outcome importance (Similar to Figure&nbsp;6, right, but without ordering). On the right, an outcome-informed Love plot, but augmented by the combined outcome-importance ASMD score. While the former may emphasize prognostic variables too much (X_Y), the latter is able to minimize their importance and emphasize instead confounding variables that have both larger covariate-outcome importance and have large ASMD."></a></p>
-<figcaption>Love plot augmented by outcome-informed ASMD. On the left, an outcome-informed Love plot augmented by covariate-outcome importance (Similar to <a href="#fig-love-oui-love" class="quarto-xref">Figure&nbsp;6</a>, right, but without ordering). On the right, an outcome-informed Love plot, but augmented by the combined outcome-importance ASMD score. While the former may emphasize prognostic variables too much (<span class="math inline">\(X_Y\)</span>), the latter is able to minimize their importance and emphasize instead confounding variables that have both larger covariate-outcome importance <em>and</em> have large ASMD.</figcaption>
+<div id="fig-ouiasmd-love" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ouiasmd-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
+<a href="ouilove_plot_files/figure-html/fig-ouiasmd-love-output-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Love plot augmented by outcome-informed ASMD. On the left, an outcome-informed Love plot augmented by covariate-outcome importance (Similar to Figure&nbsp;7, right, but without ordering). On the right, an outcome-informed Love plot, but augmented by the combined outcome-importance ASMD score. While the former may emphasize prognostic variables too much (X_Y), the latter is able to minimize their importance and emphasize instead confounding variables that have both larger covariate-outcome importance and have large ASMD."><img src="ouilove_plot_files/figure-html/fig-ouiasmd-love-output-1.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ouiasmd-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Love plot augmented by outcome-informed ASMD. On the left, an outcome-informed Love plot augmented by covariate-outcome importance (Similar to <a href="#fig-love-oui-love" class="quarto-xref">Figure&nbsp;7</a>, right, but without ordering). On the right, an outcome-informed Love plot, but augmented by the combined outcome-importance ASMD score. While the former may emphasize prognostic variables too much (<span class="math inline">\(X_Y\)</span>), the latter is able to minimize their importance and emphasize instead confounding variables that have both larger covariate-outcome importance <em>and</em> have large ASMD.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1051,13 +1044,13 @@ Figure&nbsp;3: Outcome-informed ASMD score. A) Inverse propensity weighted ASMD,
 <span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
 <span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a><span class="co"># fig</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="fig-love-ouiasmd-love" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-love-ouiasmd-love" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-love-ouiasmd-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="ouilove_plot_files/figure-html/fig-love-ouiasmd-love-output-1.svg" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5"><img src="ouilove_plot_files/figure-html/fig-love-ouiasmd-love-output-1.svg" class="img-fluid figure-img"></a>
+<a href="ouilove_plot_files/figure-html/fig-love-ouiasmd-love-output-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Love plot augmented by outcome-informed ASMD."><img src="ouilove_plot_files/figure-html/fig-love-ouiasmd-love-output-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-love-ouiasmd-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Love plot augmented by outcome-informed ASMD.
+Figure&nbsp;5: Love plot augmented by outcome-informed ASMD.
 </figcaption>
 </figure>
 </div>
@@ -1078,7 +1071,7 @@ Figure&nbsp;4: Love plot augmented by outcome-informed ASMD.
 <h3 class="anchored" data-anchor-id="remake-all-plots-with-oui-asmd-score">Remake all plots with Oui-ASMD score</h3>
 </section>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [40]:</pre></div><div id="cell-fig-oui-encoding" class="cell" data-execution_count="40">
+<div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="cell-fig-oui-encoding" class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> mpl.figure.Figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> fig.subplot_mosaic(<span class="st">"BCD"</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> mpl.pyplot.subplot_mosaic(<span class="st">"BCD"</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
@@ -1123,13 +1116,13 @@ Figure&nbsp;4: Love plot augmented by outcome-informed ASMD.
 <span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
 <span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a><span class="co"># fig</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="fig-oui-encoding" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-oui-encoding" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-oui-encoding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="ouilove_plot_files/figure-html/fig-oui-encoding-output-1.svg" class="lightbox" data-glightbox="description: .lightbox-desc-7" data-gallery="quarto-lightbox-gallery-7"><img src="ouilove_plot_files/figure-html/fig-oui-encoding-output-1.svg" class="img-fluid figure-img"></a>
+<a href="ouilove_plot_files/figure-html/fig-oui-encoding-output-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;6: Encoding covariate-outcome importance information as marker opacity, marker size, and covariate order. Opacity and size allow less important covariates to appear more salient by making them more transparent or smaller, respectively. Y-axis order moves less important covariates further down the plot, focusing more important covariates in a specific region of the figure."><img src="ouilove_plot_files/figure-html/fig-oui-encoding-output-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-oui-encoding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Encoding covariate-outcome importance information as marker opacity, marker size, and covariate order. Opacity and size allow less important covariates to appear more salient by making them more transparent or smaller, respectively. Y-axis order moves less important covariates further down the plot, focusing more important covariates in a specific region of the figure.
+Figure&nbsp;6: Encoding covariate-outcome importance information as marker opacity, marker size, and covariate order. Opacity and size allow less important covariates to appear more salient by making them more transparent or smaller, respectively. Y-axis order moves less important covariates further down the plot, focusing more important covariates in a specific region of the figure.
 </figcaption>
 </figure>
 </div>
@@ -1165,28 +1158,18 @@ Figure&nbsp;5: Encoding covariate-outcome importance information as marker opaci
 <span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
 <span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a><span class="co"># fig</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="fig-love-oui-love" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-love-oui-love" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-love-oui-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="ouilove_plot_files/figure-html/fig-love-oui-love-output-1.svg" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="quarto-lightbox-gallery-8"><img src="ouilove_plot_files/figure-html/fig-love-oui-love-output-1.svg" class="img-fluid figure-img"></a>
+<a href="ouilove_plot_files/figure-html/fig-love-oui-love-output-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;7: Outcome-informed Love plot. On the left, a standard Love plot, showing covariates on the y-axis sorted by unadjusted ASMD, ASMD on the x-axis, unadjusted ASMDs as orange triangle and inverse propensity weighted ASMDs as blue circles. On the right, an Outcome-informed Love plot, encoding the combined importance of covariates on outcome prediction and exposure imbalance in three different visual channels: size (less important covariates are smaller), opacity(less important covariates are more transparent), and y-axis order (less important covariates are further down the panel). Outcome-informed Love plots reduce clutter and highlight the more important covariates to which examine balancing on."><img src="ouilove_plot_files/figure-html/fig-love-oui-love-output-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-love-oui-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Outcome-informed Love plot. On the left, a standard Love plot, showing covariates on the y-axis sorted by unadjusted ASMD, ASMD on the x-axis, unadjusted ASMDs as orange triangle and inverse propensity weighted ASMDs as blue circles. On the right, an Outcome-informed Love plot, encoding the combined importance of covariates on outcome prediction and exposure imbalance in three different visual channels: size (less important covariates are smaller), opacity(less important covariates are more transparent), and y-axis order (less important covariates are further down the panel). Outcome-informed Love plots reduce clutter and highlight the more important covariates to which examine balancing on.
+Figure&nbsp;7: Outcome-informed Love plot. On the left, a standard Love plot, showing covariates on the y-axis sorted by unadjusted ASMD, ASMD on the x-axis, unadjusted ASMDs as orange triangle and inverse propensity weighted ASMDs as blue circles. On the right, an Outcome-informed Love plot, encoding the combined importance of covariates on outcome prediction and exposure imbalance in three different visual channels: size (less important covariates are smaller), opacity(less important covariates are more transparent), and y-axis order (less important covariates are further down the panel). Outcome-informed Love plots reduce clutter and highlight the more important covariates to which examine balancing on.
 </figcaption>
 </figure>
 </div>
 </div>
 </div></div>
-<div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;1: Encoding covariate-outcome importance information as marker opacity, marker size, and covariate order. Opacity and size allow less important covariates to appear more salient by making them more transparent or smaller, respectively. Y-axis order moves less important covariates further down the plot, focusing more important covariates in a specific region of the figure.</span>
-<span class="glightbox-desc lightbox-desc-2">Figure&nbsp;2: Outcome-informed Love plot. On the left, a standard Love plot, showing covariates on the y-axis sorted by unadjusted ASMD, ASMD on the x-axis, unadjusted ASMDs as orange triangle and inverse propensity weighted ASMDs as blue circles. On the right, an Outcome-informed Love plot, encoding the importance of covariate on outcome prediction in three different visual channels: size (less important covariates are smaller), opacity(less important covariates are more transparent), and y-axis order (less important covariates are further down the panel). Outcome-informed Love plots reduce clutter and highlight the more important covariates to which examine balancing on.</span>
-<span class="glightbox-desc lightbox-desc-3">Figure&nbsp;3: Outcome-informed ASMD score. A) Inverse propensity weighted ASMD, with 0.1 threshold reference (dashed) B) Covariate-outcome importance score (mean decrease in mean square error). C) Outcome-informed ASMD, generated by multiplying the above two. The ASMD emphasizes covariate-exposure associations (<span class="math inline">\(X_A, X_{AY}\)</span>), the outcome-importance score emphasizes covariate-outcome associations (<span class="math inline">\(X_Y, X_{AY}\)</span>), and outcome-informed ASMD emphasizes the interaction of the former two scores (<span class="math inline">\(X_{AY}\)</span>).<br>
-</span>
-<span class="glightbox-desc lightbox-desc-4">Love plot augmented by outcome-informed ASMD. On the left, an outcome-informed Love plot augmented by covariate-outcome importance (Similar to <a href="#fig-love-oui-love" class="quarto-xref">Figure&nbsp;6</a>, right, but without ordering). On the right, an outcome-informed Love plot, but augmented by the combined outcome-importance ASMD score. While the former may emphasize prognostic variables too much (<span class="math inline">\(X_Y\)</span>), the latter is able to minimize their importance and emphasize instead confounding variables that have both larger covariate-outcome importance <em>and</em> have large ASMD.</span>
-<span class="glightbox-desc lightbox-desc-5">Figure&nbsp;4: Love plot augmented by outcome-informed ASMD.</span>
-<span class="glightbox-desc lightbox-desc-7">Figure&nbsp;5: Encoding covariate-outcome importance information as marker opacity, marker size, and covariate order. Opacity and size allow less important covariates to appear more salient by making them more transparent or smaller, respectively. Y-axis order moves less important covariates further down the plot, focusing more important covariates in a specific region of the figure.</span>
-<span class="glightbox-desc lightbox-desc-8">Figure&nbsp;6: Outcome-informed Love plot. On the left, a standard Love plot, showing covariates on the y-axis sorted by unadjusted ASMD, ASMD on the x-axis, unadjusted ASMDs as orange triangle and inverse propensity weighted ASMDs as blue circles. On the right, an Outcome-informed Love plot, encoding the combined importance of covariates on outcome prediction and exposure imbalance in three different visual channels: size (less important covariates are smaller), opacity(less important covariates are more transparent), and y-axis order (less important covariates are further down the panel). Outcome-informed Love plots reduce clutter and highlight the more important covariates to which examine balancing on.</span>
-</div>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1223,18 +1206,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1266,7 +1238,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1274,7 +1266,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1371,7 +1363,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1596,30 +1587,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
     }
-  });
-
-};
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
           </script> 
   
 </body></html>

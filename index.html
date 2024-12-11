@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ehud Karavani">
 <meta name="dcterms.date" content="2024-04-20">
-<meta name="keywords" content="Causal inference, Data visualization, Standardized difference, Model evaluation, Variable selection, Balance, Observational study, Propensity score, Matching">
+<meta name="keywords" content="Causal inference, Data visualization, Standardized difference, Model evaluation, Variable selection, Balancing, Observational study, Propensity score, Matching">
 
 <title>Oui-Love Plots: Outcome-informed Love plots for covariate balance in causal inference</title>
 <style>
@@ -52,10 +52,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a1ff8711b79ae3724c050874b28d9907.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -63,7 +63,7 @@ div.csl-indent {
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -94,7 +94,7 @@ window.Quarto = {
 </script>
 
 <meta name="citation_title" content="Oui-Love Plots: Outcome-informed Love plots for covariate balance in causal inference">
-<meta name="citation_keywords" content="Causal inference,Data visualization,Standardized difference,Model evaluation,Variable selection,Balance,Observational study,Propensity score,Matching">
+<meta name="citation_keywords" content="Causal inference,Data visualization,Standardized difference,Model evaluation,Variable selection,Balancing,Observational study,Propensity score,Matching">
 <meta name="citation_author" content="Ehud Karavani">
 <meta name="citation_publication_date" content="2024-04-20">
 <meta name="citation_cover_date" content="2024-04-20">
@@ -114,6 +114,9 @@ window.Quarto = {
 <meta name="citation_reference" content="citation_title=Fundamentals of data visualization: A primer on making informative and compelling figures;,citation_author=Claus O Wilke;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;">
 <meta name="citation_reference" content="citation_title=Principles of confounder selection;,citation_author=Tyler J VanderWeele;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_volume=34;,citation_journal_title=European journal of epidemiology;,citation_publisher=Springer;">
 <meta name="citation_reference" content="citation_title=Random forests;,citation_author=Leo Breiman;,citation_publication_date=2001;,citation_cover_date=2001;,citation_year=2001;,citation_volume=45;,citation_journal_title=Machine learning;,citation_publisher=Springer;">
+<meta name="citation_reference" content="citation_title=A crash course in good and bad controls;,citation_author=Carlos Cinelli;,citation_author=Andrew Forney;,citation_author=Judea Pearl;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=3;,citation_volume=53;,citation_journal_title=Sociological Methods &amp;amp;amp; Research;,citation_publisher=Sage Publications Sage CA: Los Angeles, CA;">
+<meta name="citation_reference" content="citation_title=Variable selection for propensity score models;,citation_author=M Alan Brookhart;,citation_author=Sebastian Schneeweiss;,citation_author=Kenneth J Rothman;,citation_author=Robert J Glynn;,citation_author=Jerry Avorn;,citation_author=Til Stürmer;,citation_publication_date=2006;,citation_cover_date=2006;,citation_year=2006;,citation_issue=12;,citation_volume=163;,citation_journal_title=American journal of epidemiology;,citation_publisher=Oxford University Press;">
+<meta name="citation_reference" content="citation_title=A unified approach to interpreting model predictions;,citation_author=Scott M Lundberg;,citation_author=Su-In Lee;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_conference_title=Advances in neural information processing systems 30;,citation_conference=Curran Associates, Inc.;">
 </head>
 
 <body>
@@ -154,7 +157,7 @@ window.Quarto = {
                 <div>
             <div class="quarto-title-meta-heading">Modified</div>
             <div class="quarto-title-meta-contents">
-              <p class="date-modified">May 16, 2024</p>
+              <p class="date-modified">December 11, 2024</p>
             </div>
           </div>
                 
@@ -168,7 +171,7 @@ window.Quarto = {
     <div>
       <div class="keywords">
         <div class="block-title">Keywords</div>
-        <p>Causal inference, Data visualization, Standardized difference, Model evaluation, Variable selection, Balance, Observational study, Propensity score, Matching</p>
+        <p>Causal inference, Data visualization, Standardized difference, Model evaluation, Variable selection, Balancing, Observational study, Propensity score, Matching</p>
       </div>
     </div>
 
@@ -183,10 +186,7 @@ window.Quarto = {
   <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#outcome-informed-love-plot" id="toc-outcome-informed-love-plot" class="nav-link" data-scroll-target="#outcome-informed-love-plot">Outcome-informed Love plot</a></li>
-  <li><a href="#outcome-informed-balance-metrics" id="toc-outcome-informed-balance-metrics" class="nav-link" data-scroll-target="#outcome-informed-balance-metrics">Outcome-informed balance metrics</a>
-  <ul class="collapse">
-  <li><a href="#augmenting-love-plot-with-outcome-informed-asmd-scores" id="toc-augmenting-love-plot-with-outcome-informed-asmd-scores" class="nav-link" data-scroll-target="#augmenting-love-plot-with-outcome-informed-asmd-scores">Augmenting Love plot with outcome-informed ASMD scores</a></li>
-  </ul></li>
+  <li><a href="#outcome-informed-balance-metrics" id="toc-outcome-informed-balance-metrics" class="nav-link" data-scroll-target="#outcome-informed-balance-metrics">Outcome-informed balance metrics</a></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
   <ul class="collapse">
   <li><a href="#covariate-balance-measures" id="toc-covariate-balance-measures" class="nav-link" data-scroll-target="#covariate-balance-measures">Covariate balance measures</a></li>
@@ -199,9 +199,9 @@ window.Quarto = {
   </ul></li>
   
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="notebooks\dag_dgp_1-preview.html"><i class="bi bi-journal-code"></i>Data generating process 1</a></li><li><a href="notebooks\ouilove_plot-preview.html"><i class="bi bi-journal-code"></i>Outcome-informed Love plot</a></li><li><a href="notebooks\ouibalance_plot-preview.html"><i class="bi bi-journal-code"></i>Outcome-informed balance plots</a></li></ul></div></nav>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="notebooks\dag_dgp_1-preview.html"><i class="bi bi-journal-code"></i>Data generating process</a></li><li><a href="notebooks\ouibalance_plot-preview.html"><i class="bi bi-journal-code"></i>Outcome-informed balance plots</a></li><li><a href="notebooks\ouilove_plot-preview.html"><i class="bi bi-journal-code"></i>Outcome-informed Love plot</a></li></ul></div></nav>
 </div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
 <main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
@@ -213,7 +213,7 @@ window.Quarto = {
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
 <p>Assessing balance between exposure groups by visualizing the absolute standardized mean differences (ASMD) in a Love plot is a common approach to diagnose models like propensity score weighting or matching. However, the ASMD only captures covariate-exposure associations and neglects to integrate information about the associations between covariates and the outcome. <!-- Since causal inference researchers often select covariates for adjustment sets based on a-priori domain expertise (e.g., via a directed acyclic graph), 
-they are at higher risk at treating instrumental variables or prognostic factors as confounders.  --> Since adjustment sets are often defined a-priori to the data (e.g., via directed acyclic graphs), there is an increased risk of classifying variables as confounders even if they are not actually associated with both the exposure and the outcome in the data. Furthermore, since only confounders should be balanced across exposure groups, assessing the balance of non-confounders can create a skewed picture of the required balance and may mislead researchers to pursue balancing where it is not necessary.</p>
+they are at higher risk at treating instrumental variables or prognostic factors as confounders.  --> Since adjustment sets are often defined a-priori to the data (e.g., via directed acyclic graphs), there is an increased risk of classifying variables as confounders even if they are not actually associated with both the exposure and the outcome in the data. And since confounders are required to be balanced between exposure groups to achieve unbiased effect estimation, assessing the balance of other variables may create a skewed picture of the required balance and may mislead researchers to pursue balancing where it is not strictly necessary.</p>
 <p>To overcome this issue, we propose the Oui-Love plot: an OUtcome-Informed Love plot, consisting of two main parts. First, we introduce an outcome-informed ASMD score by incorporating covariate-outcome importance measures with the ASMD. Second, since we love plots, this additional score is visualized through several graphical channels (opacity, marker size, and covariate order) to augment the standard Love plot. This enhanced Love plot can better assist researchers to evaluate balancing on variables that are more likely to bias treatment effects in the data at hand by emphasizing variables that are statistically associated with both exposure and the outcome. The method is modular and easy to implement with modern statistical software and may hopefully benefit causal inference researchers and practitioners.</p>
 </section>
 <section id="introduction" class="level2">
@@ -223,7 +223,7 @@ they are at higher risk at treating instrumental variables or prognostic factors
 <p>Whether a variable is a confounder cannot be determined from the data itself. Therefore, the most common approach to select confounders for an adjustment set <!-- (and more generally, how any pair of variables interact)  --> is to let a domain expert hand pick them manually <span class="citation" data-cites="hernan2002causal tennant2021use">(<a href="#ref-hernan2002causal" role="doc-biblioref">Hernán et al. 2002</a>; <a href="#ref-tennant2021use" role="doc-biblioref">Tennant et al. 2021</a>)</span>. The structure arising from this specification is often formulated and presented as a Directed Acyclic Graph (DAG), where variables are depicted as nodes and two nodes are connected by an arrow if one causally influences the other <span class="citation" data-cites="greenland1999causal">(<a href="#ref-greenland1999causal" role="doc-biblioref">Greenland, Pearl, and Robins 1999</a>)</span>. <!-- Since This formulation of the structure of the problem, often through a Directed Acyclic Graph (DAG),  --> When specifying how any pair of variables interact, the omission of an edge – assuming there is no association whatsoever – is a much stronger assumption than its inclusion – allowing the model to infer zero association from the data. Thus, when determining the structure, modellers may prefer to err on the inclusion of edges, rather than their omission <span class="citation" data-cites="tennant2021use greenland1999causal">(<a href="#ref-tennant2021use" role="doc-biblioref">Tennant et al. 2021</a>; <a href="#ref-greenland1999causal" role="doc-biblioref">Greenland, Pearl, and Robins 1999</a>)</span>.</p>
 <p>Most importantly, since the structure – and therefore the confounders – are determined a-priori, based on prior knowledge rather than data, we denote them <em>structural confounders</em>. However, an a-priori <em>structural confounder</em> may not necessarily be an a-posteriori <em>statistical confounder</em>. Namely, the prior assumption a variable is associated with both exposure and outcome may not manifest at the data at hand. This is quite plausible, even in the absence of finite sampling errors, since we often build DAGs one pair at a time, failing to grasp how many factors may interact to determine the exposure or outcome conditioned on all the other factors. For instance, a factor we assumed is considered when prescribing medicine may not be used, or we can fail to understand the mechanism under which a certain factor conditionally explains the outcome. Both will result with the factor not being statistically associated with the exposure or outcome, respectively (or both).</p>
 <p>Therefore, covariate balance assessments that only capture covariate-exposure associations can be insufficient. For example, such a putative confounder may heavily influence differential exposure, leading to high imbalance, but have no impact on the outcome (these may be referred to as instrumental variables). In such cases, it will be unnecessary (or even harmful <span class="citation" data-cites="ding2017instrumental">(<a href="#ref-ding2017instrumental" role="doc-biblioref">Ding, VanderWeele, and Robins 2017</a>)</span>) to balance over that putative confounder. However, commonly used diagnostics like the (Absolute) Standardized Mean Difference (ASMD) <span class="citation" data-cites="austin2009balance">(<a href="#ref-austin2009balance" role="doc-biblioref">Austin 2009</a>)</span> and the corresponding Love plot <span class="citation" data-cites="ahmed2006heart">(<a href="#ref-ahmed2006heart" role="doc-biblioref">Ahmed et al. 2006</a>)</span> will fail to capture that and may mislead the researcher to focus on where they should not.</p>
-<p>To overcome this issue, information about the covariate-outcome association should be incorporated to provide a fuller picture. Fortunately, assessing the statistical importance of a variable on an outcome is a very known problem in regression modeling and machine learning <span class="citation" data-cites="harrell2001regression shalev2014understanding">(<a href="#ref-harrell2001regression" role="doc-biblioref">Harrell et al. 2001, chap. 9.8.4</a>; <a href="#ref-shalev2014understanding" role="doc-biblioref">Shalev-Shwartz and Ben-David 2014, chap. 25</a>)</span>. Assessing covariate-outcome importance will provide us with additional information orthogonal and complementary to the covariate-exposure balance assessment. This will allow us to, literally speaking, paint a fuller picture about confounder imbalance.</p>
+<p>To overcome this issue, information about the covariate-outcome association should be incorporated to provide a fuller picture. Fortunately, assessing the statistical importance of a variable on an outcome is a very known problem in regression modeling and machine learning <span class="citation" data-cites="harrell2001regression shalev2014understanding lundberg2017shap">(<a href="#ref-harrell2001regression" role="doc-biblioref">Harrell et al. 2001, chap. 9.8.4</a>; <a href="#ref-shalev2014understanding" role="doc-biblioref">Shalev-Shwartz and Ben-David 2014, chap. 25</a>; <a href="#ref-lundberg2017shap" role="doc-biblioref">Lundberg and Lee 2017</a>)</span>. Assessing covariate-outcome importance will provide us with additional information orthogonal and complementary to the covariate-exposure balance assessment. This will allow us to, literally speaking, paint a fuller picture about confounder imbalance.</p>
 <p>Our contribution in this manuscript is twofold. First, we will provide visual augmentation to the known Love plot based on both standardized mean difference and covariate-outcome importance. Second, we will combine both measures together to suggest a better metric for covariate/model selection and further enhance Love plots or any other balance assessment plots.</p>
 <!-- 
 TODO: consider rewriting. optional points:
@@ -237,10 +237,10 @@ TODO: consider rewriting. optional points:
 <div class="quarto-embed-nb-cell page-columns page-full">
 <div id="cell-fig-love-oui-love" class="cell page-columns page-full" data-execution_count="42">
 <div class="cell-output cell-output-display page-columns page-full">
-<div id="fig-love-oui-love" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<div id="fig-love-oui-love" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-love-oui-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
-<a href="index_files/figure-html/notebooks-ouilove_plot-fig-love-oui-love-output-1.svg" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="index_files/figure-html/notebooks-ouilove_plot-fig-love-oui-love-output-1.svg" class="img-fluid figure-img column-screen-inset"></a>
+<a href="index_files/figure-html/notebooks-ouilove_plot-fig-love-oui-love-output-1.svg" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Outcome-informed Love plot. On the left, a standard Love plot, showing covariates on the y-axis sorted by unadjusted ASMD, ASMD on the x-axis, unadjusted ASMDs as orange triangle and inverse propensity weighted ASMDs as blue circles. On the right, an Outcome-informed Love plot, encoding the combined importance of covariates on outcome prediction and exposure imbalance in three different visual channels: size (less important covariates are smaller), opacity(less important covariates are more transparent), and y-axis order (less important covariates are further down the panel). Outcome-informed Love plots reduce clutter and highlight the more important covariates to which examine balancing on."><img src="index_files/figure-html/notebooks-ouilove_plot-fig-love-oui-love-output-1.svg" class="img-fluid figure-img column-screen-inset"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-love-oui-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Outcome-informed Love plot. On the left, a standard Love plot, showing covariates on the y-axis sorted by unadjusted ASMD, ASMD on the x-axis, unadjusted ASMDs as orange triangle and inverse propensity weighted ASMDs as blue circles. On the right, an Outcome-informed Love plot, encoding the combined importance of covariates on outcome prediction and exposure imbalance in three different visual channels: size (less important covariates are smaller), opacity(less important covariates are more transparent), and y-axis order (less important covariates are further down the panel). Outcome-informed Love plots reduce clutter and highlight the more important covariates to which examine balancing on.
@@ -249,7 +249,7 @@ Figure&nbsp;1: Outcome-informed Love plot. On the left, a standard Love plot, sh
 </div>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-1" href="notebooks\ouilove_plot-preview.html#cell-fig-love-oui-love">Source: Outcome-informed Love plot</a></div>
+</div>
 </div>
 <!-- See possible refs: https://socviz.co/lookatdata.html (1.5); https://clauswilke.com/dataviz/aesthetic-mapping.html; https://web.cse.ohio-state.edu/~shen.94/Melbourne/Slides/TamaraChp5.pdf; https://uwdata.github.io/visualization-curriculum/altair_marks_encoding.html; https://www.csl.mtu.edu/cs5631.ck/common/05-Marks-Channels.pdf; -->
 <!-- ### Grammar of graphics -->
@@ -268,12 +268,12 @@ and a high score indicates relatively high importance -- a change in the covaria
 <p>The common property for options (1) and (2) is that less important covariates appear less prominent, either being smaller or more transparent. The argument being that if they do not influence the outcome, they will not bias the estimation, and therefore are not important and less interesting to examine. If they are less interesting to examine, there is less need for them to stand out and can therefore be salient. This will reduce clutter and allow the viewer to focus on the more important (and thus visually prominent) covariates. Meanwhile, option (3) clusters more important covariates to specific regions of the plot, but breaks the standard of ordering covariates by the unadjusted ASMD that may be familiar to practitioners. All options achieve a similar objective of differential attention onto more important covariates, either by differential prominence (transparency and size) or by differential spatial location (order). <!-- See Figure [cross ref] for details. --></p>
 <div class="page-columns page-full">
 <div class="quarto-embed-nb-cell page-columns page-full">
-<div id="cell-fig-oui-encoding" class="cell page-columns page-full" data-execution_count="40">
+<div id="cell-fig-oui-encoding" class="cell page-columns page-full">
 <div class="cell-output cell-output-display page-columns page-full">
-<div id="fig-oui-encoding" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<div id="fig-oui-encoding" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-oui-encoding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
-<a href="index_files/figure-html/notebooks-ouilove_plot-fig-oui-encoding-output-1.svg" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="index_files/figure-html/notebooks-ouilove_plot-fig-oui-encoding-output-1.svg" class="img-fluid figure-img column-body-outset"></a>
+<a href="index_files/figure-html/notebooks-ouilove_plot-fig-oui-encoding-output-1.svg" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Encoding covariate-outcome importance information as marker opacity, marker size, and covariate order. Opacity and size allow less important covariates to appear more salient by making them more transparent or smaller, respectively. Y-axis order moves less important covariates further down the plot, focusing more important covariates in a specific region of the figure."><img src="index_files/figure-html/notebooks-ouilove_plot-fig-oui-encoding-output-1.svg" class="img-fluid figure-img column-body-outset"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-oui-encoding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Encoding covariate-outcome importance information as marker opacity, marker size, and covariate order. Opacity and size allow less important covariates to appear more salient by making them more transparent or smaller, respectively. Y-axis order moves less important covariates further down the plot, focusing more important covariates in a specific region of the figure.
@@ -282,7 +282,7 @@ Figure&nbsp;2: Encoding covariate-outcome importance information as marker opaci
 </div>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-2" href="notebooks\ouilove_plot-preview.html#cell-fig-oui-encoding">Source: Outcome-informed Love plot</a></div>
+</div>
 </div>
 </section>
 <section id="outcome-informed-balance-metrics" class="level2">
@@ -293,25 +293,19 @@ Figure&nbsp;2: Encoding covariate-outcome importance information as marker opaci
 <div class="quarto-embed-nb-cell">
 <div id="cell-fig-oui-asmd-score" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display">
-<div id="fig-oui-asmd-score" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-oui-asmd-score" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-oui-asmd-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/notebooks-ouilove_plot-fig-oui-asmd-score-output-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img src="index_files/figure-html/notebooks-ouilove_plot-fig-oui-asmd-score-output-1.svg" class="img-fluid figure-img"></a>
+<a href="index_files/figure-html/notebooks-ouilove_plot-fig-oui-asmd-score-output-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Outcome-informed ASMD score. A) Inverse propensity weighted ASMD, with 0.1 threshold reference (dashed) B) Covariate-outcome importance score (mean decrease in mean square error). C) Outcome-informed ASMD, generated by multiplying the above two. The ASMD emphasizes covariate-exposure associations (X_A, X_{AY}), the outcome-importance score emphasizes covariate-outcome associations (X_Y, X_{AY}), and outcome-informed ASMD emphasizes the interaction of the former two scores (X_{AY})."><img src="index_files/figure-html/notebooks-ouilove_plot-fig-oui-asmd-score-output-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-oui-asmd-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Outcome-informed ASMD score. A) Inverse propensity weighted ASMD, with 0.1 threshold reference (dashed) B) Covariate-outcome importance score (mean decrease in mean square error). C) Outcome-informed ASMD, generated by multiplying the above two. The ASMD emphasizes covariate-exposure associations (<span class="math inline">\(X_A, X_{AY}\)</span>), the outcome-importance score emphasizes covariate-outcome associations (<span class="math inline">\(X_Y, X_{AY}\)</span>), and outcome-informed ASMD emphasizes the interaction of the former two scores (<span class="math inline">\(X_{AY}\)</span>).<br>
-
+Figure&nbsp;3: Outcome-informed ASMD score. A) Inverse propensity weighted ASMD, with 0.1 threshold reference (dashed) B) Covariate-outcome importance score (mean decrease in mean square error). C) Outcome-informed ASMD, generated by multiplying the above two. The ASMD emphasizes covariate-exposure associations (<span class="math inline">\(X_A, X_{AY}\)</span>), the outcome-importance score emphasizes covariate-outcome associations (<span class="math inline">\(X_Y, X_{AY}\)</span>), and outcome-informed ASMD emphasizes the interaction of the former two scores (<span class="math inline">\(X_{AY}\)</span>).
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-3" href="notebooks\ouilove_plot-preview.html#cell-fig-oui-asmd-score">Source: Outcome-informed Love plot</a></div>
-<section id="augmenting-love-plot-with-outcome-informed-asmd-scores" class="level3">
-<h3 class="anchored" data-anchor-id="augmenting-love-plot-with-outcome-informed-asmd-scores">Augmenting Love plot with outcome-informed ASMD scores</h3>
-<p>This limitation of using covariate-outcome importance alone is also relevant when augmenting Love plots. Namely, it may over-emphasize prognostic variables. Those may still be visually differentiated from confounders by having small ASMDs (because they have no covariate-exposure association), but this still forces the researcher to be more mindful when examining the plot for imbalance in confounding factors.</p>
-<p>To assist the researcher even further, we can use the combined outcome-informed ASMD score instead of just the outcome-importance score. This allows confounding variables, associated with both the exposure and the outcome, to be further promoted above prognostic variables when plotting, making them stand out more. <a href="#suppfig-ouiasmd-love" class="quarto-xref">Figure S1</a> shows the difference between an outcome-informed Love plot and a Love plot augmented by outcome-informed ASMD score. All other figures (Figures <a href="#fig-love-oui-love" class="quarto-xref">1</a>, <a href="#fig-oui-encoding" class="quarto-xref">2</a>, <a href="#suppfig-oui-bal-plot" class="quarto-xref">S2</a>) use the combined outcome-informed ASMD score.</p>
-</section>
+</div>
 </section>
 <section id="methods" class="level2">
 <h2 class="anchored" data-anchor-id="methods">Methods</h2>
@@ -345,10 +339,10 @@ Namely, we don't consider multiple univariable importance measures, and we alway
 <div class="quarto-embed-nb-cell">
 <div id="cell-fig-dag1" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
-<div id="fig-dag1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-dag1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dag1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/notebooks-dag_dgp_1-fig-dag1-output-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4"><img src="index_files/figure-html/notebooks-dag_dgp_1-fig-dag1-output-1.svg" class="img-fluid figure-img"></a>
+<a href="index_files/figure-html/notebooks-dag_dgp_1-fig-dag1-output-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Confounding structure underlying the simulation example. Right is the true confounding structure where X_0 is not associated with neither the exposure A nor the outcome Y, X_A only influence the exposure, X_Y only influences the outcome, and X_{AY} is the only true confounder influencing both A and Y. Left is the assumed confounding structure where all variables assumed to be confounders influencing both the treatment and the outcome. Wrongly specified edges are depicted red and dashed."><img src="index_files/figure-html/notebooks-dag_dgp_1-fig-dag1-output-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dag1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Confounding structure underlying the simulation example. Right is the true confounding structure where <span class="math inline">\(X_0\)</span> is not associated with neither the exposure <span class="math inline">\(A\)</span> nor the outcome <span class="math inline">\(Y\)</span>, <span class="math inline">\(X_A\)</span> only influence the exposure, <span class="math inline">\(X_Y\)</span> only influences the outcome, and <span class="math inline">\(X_{AY}\)</span> is the only true confounder influencing both <span class="math inline">\(A\)</span> and <span class="math inline">\(Y\)</span>. Left is the assumed confounding structure where all variables assumed to be confounders influencing both the treatment and the outcome. Wrongly specified edges are depicted red and dashed.
@@ -357,17 +351,49 @@ Figure&nbsp;4: Confounding structure underlying the simulation example. Right is
 </div>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-4" href="notebooks\dag_dgp_1-preview.html#cell-fig-dag1">Source: Data generating process 1</a></div>
+</div>
 <!-- ::: -->
 <!-- ## Results? -->
 </section>
 </section>
-<section id="discussion" class="level2">
+<section id="discussion" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
 <p>We further present advantages, limitations, and extensions to the outcome-informed Love plots.</p>
+<section id="prognostic-and-confounding-variables" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="prognostic-and-confounding-variables">Prognostic and confounding variables</h4>
+<p>Throughout this manuscript, we have focused on confounding variables–factors influencing both the outcome and treatment assignment–that are necessary for obtaining unbiased effect estimations. However, prognostic variables–factors influencing the outcome but not the treatment assignment–can be of similar importance as they are required for obtaining precise effect estimations (<span class="citation" data-cites="cinelli2024crash">Cinelli, Forney, and Pearl (<a href="#ref-cinelli2024crash" role="doc-biblioref">2024</a>)</span>). Including such pre-treatment prognostic factors in balancing models like inverse probability weighting is, therefore, recommended (<span class="citation" data-cites="brookhart2006variable">Brookhart et al. (<a href="#ref-brookhart2006variable" role="doc-biblioref">2006</a>)</span>).</p>
+<p>This distinction between prognostic and confounding variables immediately translates to the proposed Love plot augmentation with outcome-informed scores and outcome-informed ASMD scores. Outcome-informed Love plots, utilizing only outcome-importance variables, will favor emphasizing prognostic variables, as they only take covariate-outcome association into consideration. Outcome-informed ASMD scores, taking the product of the covariate-outcome importance with the ASMD (covariate-treatment importance), will favor emphasizing confounding variables. Therefore, choosing whether to augment a Love plot only with outcome-importance scores or with outcome-importance ASMDs can shed light on different aspects of the model depending on the interest of the analyst.</p>
+<p>Confounding variables may still be detectable when augmenting a Love plot with just outcome-importance scores. First, because confounding factors do associate with the outcome, they will be visible and shown prominently in the plot. Second, unlike prognostic factors, confounding variables will have higher unadjusted ASMD, that will distinguish them from solely prognostic factors. <!-- This is a subtle cue that may force the analysts to be more mindful when examining the plot for potentially biasing imbalances,  --> This is a subtle cue that may lead to more cognitive load by anyone examining the plot for potentially biasing imbalances, but it will still contain both pieces of information, unlike outcome-informed ASMD that may obscure prognostic information.</p>
+<p>In this manuscript, we nonetheless chose to augment the Love plots with the combined outcome-informed ASMD score instead of just the outcome-importance score. <!-- (Figures [-@fig-love-oui-love; -@fig-oui-encoding; S -@suppfig-oui-bal-plot]).  --> The reason being both for simplicity and stronger visual emphasis. Simplicity, because focusing on unbiased estimation (or confounding) is a single consideration, while unbiasedness and preciseness are two considerations that paint a slightly more complex picture with additional considerations. Second, in the simulated data used, the distinction between the proposed Love plot and the plain Love plot is more prominent using outcome-informed ASMD. For completeness, however, <a href="#fig-ouiasmd-love" class="quarto-xref">Figure&nbsp;5</a> shows the difference between an outcome-informed Love plot and a Love plot augmented by outcome-informed ASMD score.</p>
+<div class="page-columns page-full">
+<div class="quarto-embed-nb-cell page-columns page-full">
+<div id="cell-fig-ouiasmd-love" class="cell page-columns page-full">
+<div class="cell-output cell-output-display page-columns page-full">
+<div id="fig-ouiasmd-love" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-ouiasmd-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<a href="index_files/figure-html/notebooks-ouilove_plot-fig-ouiasmd-love-output-1.svg" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Love plot augmented by outcome-informed ASMD. On the left, an outcome-informed Love plot augmented by covariate-outcome importance (Similar to Figure&nbsp;1, right, but without ordering). On the right, an outcome-informed Love plot, but augmented by the combined outcome-importance ASMD score. While the former may emphasize prognostic variables too much (X_Y), the latter is able to minimize their importance and emphasize instead confounding variables that have both larger covariate-outcome importance and have large ASMD."><img src="index_files/figure-html/notebooks-ouilove_plot-fig-ouiasmd-love-output-1.svg" class="img-fluid figure-img column-body-outset"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ouiasmd-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Love plot augmented by outcome-informed ASMD. On the left, an outcome-informed Love plot augmented by covariate-outcome importance (Similar to <a href="#fig-love-oui-love" class="quarto-xref">Figure&nbsp;1</a>, right, but without ordering). On the right, an outcome-informed Love plot, but augmented by the combined outcome-importance ASMD score. While the former may emphasize prognostic variables too much (<span class="math inline">\(X_Y\)</span>), the latter is able to minimize their importance and emphasize instead confounding variables that have both larger covariate-outcome importance <em>and</em> have large ASMD.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 
+In this manuscript, 
+To assist the researcher even further, we can use the combined outcome-informed ASMD score instead of just the outcome-importance score. 
+This allows confounding variables, associated with both the exposure and the outcome, to be further promoted above prognostic variables when plotting, making them stand out more.
+@suppfig-ouiasmd-love shows the difference between an outcome-informed Love plot and a Love plot augmented by outcome-informed ASMD score.
+All other figures (Figures [-@fig-love-oui-love; -@fig-oui-encoding; S -@suppfig-oui-bal-plot]) use the combined outcome-informed ASMD score.   
+-->
+</section>
 <section id="augmenting-more-than-just-love-plots" class="level4">
 <h4 class="anchored" data-anchor-id="augmenting-more-than-just-love-plots">Augmenting more than just Love plots</h4>
-<p>The augmentation presented, encoding covariate-outcome importance in the opacity and/or size channels, is not only limited to the standard, traditional Love plot. Covariate imbalance, pre- and post-adjustment, can sometimes be presented as either scatter plots or slope-graphs. In scatter plots, the adjusted and unadjusted ASMDs are plotted on the x and y axes. In slope graphs, the pre/post-adjustment indication is mapped to the x-axis and the ASMD to the y-axis. Scatter plots are better suited for high-dimensional settings where plotting all covariates on the y-axis is infeasible (or at least too crowded). Slope graphs have a similar strength, compromising some information richness (covariate identity) in exchange of emphasizing overall reduction in ASMD. <a href="#suppfig-oui-bal-plot" class="quarto-xref">Figure S2</a> demonstrates both variants can benefit by the same augmenting encoding.</p>
+<p>The augmentation presented, encoding covariate-outcome importance in the opacity and/or size channels, is not only limited to the standard, traditional Love plot. Covariate imbalance, pre- and post-adjustment, can sometimes be presented as either scatter plots or slope-graphs. In scatter plots, the adjusted and unadjusted ASMDs are plotted on the x and y axes. In slope graphs, the pre/post-adjustment indication is mapped to the x-axis and the ASMD to the y-axis. Scatter plots are better suited for high-dimensional settings where plotting all covariates on the y-axis is infeasible (or at least too crowded). Slope graphs have a similar strength, compromising some information richness (covariate identity) in exchange of emphasizing overall reduction in ASMD. <a href="#suppfig-oui-bal-plot" class="quarto-xref">Figure S1</a> demonstrates both variants can benefit by the same augmenting encoding.</p>
 </section>
 <section id="assessing-the-utility-of-outcome-informed-love-plots" class="level4">
 <h4 class="anchored" data-anchor-id="assessing-the-utility-of-outcome-informed-love-plots">Assessing the utility of Outcome-informed Love plots</h4>
@@ -387,57 +413,26 @@ Figure&nbsp;4: Confounding structure underlying the simulation example. Right is
 
 
 
-<div id="quarto-appendix" class="default page-columns page-full"><section id="appendix" class="level2 appendix page-columns page-full"><h2 class="anchored quarto-appendix-heading">Appendix</h2><div class="quarto-appendix-contents page-columns page-full">
+<div id="quarto-appendix" class="default"><section id="appendix" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Appendix</h2><div class="quarto-appendix-contents">
 
-<section id="outcome-importance-only-vs.-outcome-informed-asmd-augmentation" class="level4 page-columns page-full">
-<h4 class="anchored" data-anchor-id="outcome-importance-only-vs.-outcome-informed-asmd-augmentation">Outcome importance-only vs.&nbsp;outcome-informed ASMD augmentation</h4>
-<p>Augmenting Love plots with outcome importance or the combined outcome informed ASMD score.</p>
-<div class="page-columns page-full">
-<div class="quarto-embed-nb-cell page-columns page-full">
-<div id="cell-suppfig-ouiasmd-love" class="cell page-columns page-full" data-execution_count="33">
-<div class="cell-output cell-output-display page-columns page-full">
-<div id="suppfig-ouiasmd-love" class="quarto-float page-columns page-full">
-<figure class="quarto-float quarto-float-suppfig figure page-columns page-full">
-<div aria-describedby="suppfig-ouiasmd-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
-<a href="index_files/figure-html/notebooks-ouilove_plot-suppfig-ouiasmd-love-output-1.svg" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5"><img src="index_files/figure-html/notebooks-ouilove_plot-suppfig-ouiasmd-love-output-1.svg" class="img-fluid figure-img column-body-outset"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-suppfig" id="suppfig-ouiasmd-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure S1: Love plot augmented by outcome-informed ASMD. On the left, an outcome-informed Love plot augmented by covariate-outcome importance (Similar to <a href="#fig-love-oui-love" class="quarto-xref">Figure&nbsp;1</a>, right, but without ordering). On the right, an outcome-informed Love plot, but augmented by the combined outcome-importance ASMD score. While the former may emphasize prognostic variables too much (<span class="math inline">\(X_Y\)</span>), the latter is able to minimize their importance and emphasize instead confounding variables that have both larger covariate-outcome importance <em>and</em> have large ASMD.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<a class="quarto-notebook-link" id="nblink-5" href="notebooks\ouilove_plot-preview.html#cell-suppfig-ouiasmd-love">Source: Outcome-informed Love plot</a></div>
-</div>
-</section>
 <section id="outcome-informed-balance-plots" class="level4">
 <h4 class="anchored" data-anchor-id="outcome-informed-balance-plots">Outcome-informed balance plots</h4>
 <div class="quarto-embed-nb-cell">
 <div id="cell-suppfig-oui-bal-plot" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display" data-execution_count="16">
-<div id="suppfig-oui-bal-plot" class="quarto-float">
+<div id="suppfig-oui-bal-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-suppfig figure">
 <div aria-describedby="suppfig-oui-bal-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/notebooks-ouibalance_plot-suppfig-oui-bal-plot-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" data-glightbox="description: .lightbox-desc-6"><img src="index_files/figure-html/notebooks-ouibalance_plot-suppfig-oui-bal-plot-output-1.png" class="img-fluid figure-img"></a>
+<a href="index_files/figure-html/notebooks-ouibalance_plot-suppfig-oui-bal-plot-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure S1: Encoding covariate-outcome importance information (right) in scatter plots (top) and slope graphs (bottom)."><img src="index_files/figure-html/notebooks-ouibalance_plot-suppfig-oui-bal-plot-output-1.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-suppfig" id="suppfig-oui-bal-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure S2: Encoding covariate-outcome importance information (right) in scatter plots (top) and slope graphs (bottom).
+Figure S1: Encoding covariate-outcome importance information (right) in scatter plots (top) and slope graphs (bottom).
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-6" href="notebooks\ouibalance_plot-preview.html#cell-suppfig-oui-bal-plot">Source: Outcome-informed balance plots</a></div>
-<div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;1: Outcome-informed Love plot. On the left, a standard Love plot, showing covariates on the y-axis sorted by unadjusted ASMD, ASMD on the x-axis, unadjusted ASMDs as orange triangle and inverse propensity weighted ASMDs as blue circles. On the right, an Outcome-informed Love plot, encoding the combined importance of covariates on outcome prediction and exposure imbalance in three different visual channels: size (less important covariates are smaller), opacity(less important covariates are more transparent), and y-axis order (less important covariates are further down the panel). Outcome-informed Love plots reduce clutter and highlight the more important covariates to which examine balancing on.</span>
-<span class="glightbox-desc lightbox-desc-2">Figure&nbsp;2: Encoding covariate-outcome importance information as marker opacity, marker size, and covariate order. Opacity and size allow less important covariates to appear more salient by making them more transparent or smaller, respectively. Y-axis order moves less important covariates further down the plot, focusing more important covariates in a specific region of the figure.</span>
-<span class="glightbox-desc lightbox-desc-3">Figure&nbsp;3: Outcome-informed ASMD score. A) Inverse propensity weighted ASMD, with 0.1 threshold reference (dashed) B) Covariate-outcome importance score (mean decrease in mean square error). C) Outcome-informed ASMD, generated by multiplying the above two. The ASMD emphasizes covariate-exposure associations (<span class="math inline">\(X_A, X_{AY}\)</span>), the outcome-importance score emphasizes covariate-outcome associations (<span class="math inline">\(X_Y, X_{AY}\)</span>), and outcome-informed ASMD emphasizes the interaction of the former two scores (<span class="math inline">\(X_{AY}\)</span>).<br>
-</span>
-<span class="glightbox-desc lightbox-desc-4">Figure&nbsp;4: Confounding structure underlying the simulation example. Right is the true confounding structure where <span class="math inline">\(X_0\)</span> is not associated with neither the exposure <span class="math inline">\(A\)</span> nor the outcome <span class="math inline">\(Y\)</span>, <span class="math inline">\(X_A\)</span> only influence the exposure, <span class="math inline">\(X_Y\)</span> only influences the outcome, and <span class="math inline">\(X_{AY}\)</span> is the only true confounder influencing both <span class="math inline">\(A\)</span> and <span class="math inline">\(Y\)</span>. Left is the assumed confounding structure where all variables assumed to be confounders influencing both the treatment and the outcome. Wrongly specified edges are depicted red and dashed.</span>
-<span class="glightbox-desc lightbox-desc-5">Figure S1: Love plot augmented by outcome-informed ASMD. On the left, an outcome-informed Love plot augmented by covariate-outcome importance (Similar to <a href="#fig-love-oui-love" class="quarto-xref">Figure&nbsp;1</a>, right, but without ordering). On the right, an outcome-informed Love plot, but augmented by the combined outcome-importance ASMD score. While the former may emphasize prognostic variables too much (<span class="math inline">\(X_Y\)</span>), the latter is able to minimize their importance and emphasize instead confounding variables that have both larger covariate-outcome importance <em>and</em> have large ASMD.</span>
-<span class="glightbox-desc lightbox-desc-6">Figure S2: Encoding covariate-outcome importance information (right) in scatter plots (top) and slope graphs (bottom).</span>
-</div>
+<a class="quarto-notebook-link" id="nblink-1" href="notebooks\ouibalance_plot-preview.html#cell-suppfig-oui-bal-plot">Source: Outcome-informed balance plots</a></div>
 
 </section>
 </div></section><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
@@ -453,6 +448,12 @@ Austin, Peter C. 2009. <span>“Balance Diagnostics for Comparing the Distributi
 <div id="ref-breiman2001random" class="csl-entry" role="listitem">
 Breiman, Leo. 2001. <span>“Random Forests.”</span> <em>Machine Learning</em> 45: 5–32.
 </div>
+<div id="ref-brookhart2006variable" class="csl-entry" role="listitem">
+Brookhart, M Alan, Sebastian Schneeweiss, Kenneth J Rothman, Robert J Glynn, Jerry Avorn, and Til Stürmer. 2006. <span>“Variable Selection for Propensity Score Models.”</span> <em>American Journal of Epidemiology</em> 163 (12): 1149–56.
+</div>
+<div id="ref-cinelli2024crash" class="csl-entry" role="listitem">
+Cinelli, Carlos, Andrew Forney, and Judea Pearl. 2024. <span>“A Crash Course in Good and Bad Controls.”</span> <em>Sociological Methods &amp; Research</em> 53 (3): 1071–1104.
+</div>
 <div id="ref-ding2017instrumental" class="csl-entry" role="listitem">
 Ding, Peng, TJ VanderWeele, and James M Robins. 2017. <span>“Instrumental Variables as Bias Amplifiers with General Outcome and Confounding.”</span> <em>Biometrika</em> 104 (2): 291–302.
 </div>
@@ -467,6 +468,9 @@ Harrell, Frank E et al. 2001. <em>Regression Modeling Strategies: With Applicati
 </div>
 <div id="ref-hernan2002causal" class="csl-entry" role="listitem">
 Hernán, Miguel A, Sonia Hernández-Dı́az, Martha M Werler, and Allen A Mitchell. 2002. <span>“Causal Knowledge as a Prerequisite for Confounding Evaluation: An Application to Birth Defects Epidemiology.”</span> <em>American Journal of Epidemiology</em> 155 (2): 176–84.
+</div>
+<div id="ref-lundberg2017shap" class="csl-entry" role="listitem">
+Lundberg, Scott M, and Su-In Lee. 2017. <span>“A Unified Approach to Interpreting Model Predictions.”</span> In <em>Advances in Neural Information Processing Systems 30</em>, 4765–74. Curran Associates, Inc.
 </div>
 <div id="ref-shalev2014understanding" class="csl-entry" role="listitem">
 Shalev-Shwartz, Shai, and Shai Ben-David. 2014. <em>Understanding Machine Learning: From Theory to Algorithms</em>. Cambridge university press.
@@ -523,18 +527,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -566,7 +559,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -574,7 +587,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -671,7 +684,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -898,30 +910,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
     }
-  });
-
-};
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
           </script>
 
 
