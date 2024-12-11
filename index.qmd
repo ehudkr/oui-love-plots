@@ -41,7 +41,7 @@ However, the ASMD only captures covariate-exposure associations and neglects to 
 they are at higher risk at treating instrumental variables or prognostic factors as confounders.  -->
 Since adjustment sets are often defined a-priori to the data (e.g., via directed acyclic graphs),
 there is an increased risk of classifying variables as confounders even if they are not actually associated with both the exposure and the outcome in the data. 
-Furthermore, since only confounders should be balanced across exposure groups, assessing the balance of non-confounders can create a skewed picture of the required balance and may mislead researchers to pursue balancing where it is not necessary.  
+And since confounders are required to be balanced between exposure groups to achieve unbiased effect estimation, assessing the balance of other variables may create a skewed picture of the required balance and may mislead researchers to pursue balancing where it is not strictly necessary.  
 
 To overcome this issue, we propose the Oui-Love plot: an OUtcome-Informed Love plot,
 consisting of two main parts.
@@ -189,17 +189,6 @@ High scoring covariates will, therefore, only be comprised of both large ASMD *a
 {{< embed notebooks/ouilove_plot.ipynb#fig-oui-asmd-score >}}
 
 
-### Augmenting Love plot with outcome-informed ASMD scores
-This limitation of using covariate-outcome importance alone is also relevant when augmenting Love plots. 
-Namely, it may over-emphasize prognostic variables.
-Those may still be visually differentiated from confounders by having small ASMDs (because they have no covariate-exposure association), 
-but this still forces the researcher to be more mindful when examining the plot for imbalance in confounding factors.
-
-To assist the researcher even further, we can use the combined outcome-informed ASMD score instead of just the outcome-importance score. 
-This allows confounding variables, associated with both the exposure and the outcome, to be further promoted above prognostic variables when plotting, making them stand out more.
-@suppfig-ouiasmd-love shows the difference between an outcome-informed Love plot and a Love plot augmented by outcome-informed ASMD score.
-All other figures (Figures [-@fig-love-oui-love; -@fig-oui-encoding; S -@suppfig-oui-bal-plot]) use the combined outcome-informed ASMD score.  
-
 ## Methods
 
 ### Covariate balance measures
@@ -269,6 +258,43 @@ describes a setting where $X_0, X_A, X_Y$ are wrongly considered to be confounde
 ## Discussion
 We further present advantages, limitations, and extensions to the outcome-informed Love plots. 
 
+#### Prognostic and confounding variables
+Throughout this manuscript, we have focused on confounding variables--factors influencing both the outcome and treatment assignment--that are necessary for obtaining unbiased effect estimations.
+However, prognostic variables--factors influencing the outcome but not the treatment assignment--can be of similar importance as they are required for obtaining precise effect estimations (@cinelli2024crash).
+Including such pre-treatment prognostic factors in balancing models like inverse probability weighting is, therefore, recommended (@brookhart2006variable). 
+
+This distinction between prognostic and confounding variables immediately translates to the proposed Love plot augmentation with outcome-informed scores and outcome-informed ASMD scores.
+Outcome-informed Love plots, utilizing only outcome-importance variables, will favor emphasizing prognostic variables, as they only take covariate-outcome association into consideration. 
+Outcome-informed ASMD scores, taking the product of the covariate-outcome importance with the ASMD (covariate-treatment importance), will favor emphasizing confounding variables.
+Therefore, choosing whether to augment a Love plot only with outcome-importance scores or with outcome-importance ASMDs can shed light on different aspects of the model depending on the interest of the analyst. 
+
+Confounding variables may still be detectable when augmenting a Love plot with just outcome-importance scores.
+First, because confounding factors do associate with the outcome, they will be visible and shown prominently in the plot.
+Second, unlike prognostic factors, confounding variables will have higher unadjusted ASMD, that will distinguish them from solely prognostic factors. 
+<!-- This is a subtle cue that may force the analysts to be more mindful when examining the plot for potentially biasing imbalances,  -->
+This is a subtle cue that may lead to more cognitive load by anyone examining the plot for potentially biasing imbalances,
+but it will still contain both pieces of information, unlike outcome-informed ASMD that may obscure prognostic information.
+
+In this manuscript, we nonetheless chose to augment the Love plots with the combined outcome-informed ASMD score instead of just the outcome-importance score.
+<!-- (Figures [-@fig-love-oui-love; -@fig-oui-encoding; S -@suppfig-oui-bal-plot]).  -->
+The reason being both for simplicity and stronger visual emphasis.
+Simplicity, because focusing on unbiased estimation (or confounding) is a single consideration, while unbiasedness and preciseness are two considerations that paint a slightly more complex picture with additional considerations.
+Second, in the simulated data used, the distinction between the proposed Love plot and the plain Love plot is more prominent using outcome-informed ASMD. 
+For completeness, however, @fig-ouiasmd-love shows the difference between an outcome-informed Love plot and a Love plot augmented by outcome-informed ASMD score.
+
+:::{.column-body-outset}
+{{< embed notebooks/ouilove_plot.ipynb#fig-ouiasmd-love >}}
+:::
+
+
+<!-- 
+In this manuscript, 
+To assist the researcher even further, we can use the combined outcome-informed ASMD score instead of just the outcome-importance score. 
+This allows confounding variables, associated with both the exposure and the outcome, to be further promoted above prognostic variables when plotting, making them stand out more.
+@suppfig-ouiasmd-love shows the difference between an outcome-informed Love plot and a Love plot augmented by outcome-informed ASMD score.
+All other figures (Figures [-@fig-love-oui-love; -@fig-oui-encoding; S -@suppfig-oui-bal-plot]) use the combined outcome-informed ASMD score.   
+-->
+
 #### Augmenting more than just Love plots
 The augmentation presented, encoding covariate-outcome importance in the opacity and/or size channels,
 is not only limited to the standard, traditional Love plot.
@@ -320,13 +346,6 @@ and we hope it will.
 [^1]: Yes, we love plots.
 
 ## Appendix {.appendix}
-
-#### Outcome importance-only vs. outcome-informed ASMD augmentation
-Augmenting Love plots with outcome importance or the combined outcome informed ASMD score.
-
-:::{.column-body-outset}
-{{< embed notebooks/ouilove_plot.ipynb#suppfig-ouiasmd-love >}}
-:::
 
 #### Outcome-informed balance plots
 {{< embed notebooks/ouibalance_plot.ipynb#suppfig-oui-bal-plot >}}
