@@ -14,7 +14,7 @@ keywords:
   - Standardized difference
   - Model evaluation
   - Variable selection
-  - Balance
+  - Balancing
   - Observational study
   - Propensity score
   - Matching
