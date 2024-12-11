@@ -90,7 +90,7 @@ In such cases, it will be unnecessary (or even harmful [@ding2017instrumental]) 
 However, commonly used diagnostics like the (Absolute) Standardized Mean Difference (ASMD) [@austin2009balance] and the corresponding Love plot [@ahmed2006heart] will fail to capture that and may mislead the researcher to focus on where they should not.
 
 To overcome this issue, information about the covariate-outcome association should be incorporated to provide a fuller picture.
-Fortunately, assessing the statistical importance of a variable on an outcome is a very known problem in regression modeling and machine learning [@harrell2001regression, chapter 9.8.4; @shalev2014understanding chapter 25].
+Fortunately, assessing the statistical importance of a variable on an outcome is a very known problem in regression modeling and machine learning [@harrell2001regression, chapter 9.8.4; @shalev2014understanding chapter 25; @lundberg2017shap].
 Assessing covariate-outcome importance will provide us with additional information orthogonal and complementary to the covariate-exposure balance assessment. 
 This will allow us to, literally speaking, paint a fuller picture about confounder imbalance.
 
